@@ -1,4 +1,4 @@
-# ⚙️ Section 8: High Availability and Scalability
+# ⚙️ High Availability and Scalability
 
 ---
 
