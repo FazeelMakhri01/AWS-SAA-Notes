@@ -1,12 +1,4 @@
-# 🗂️ AWS Storage Services: EBS & EFS Complete Guide
-
-## 📋 Table of Contents
-- [Amazon Elastic Block Store (EBS)](#💾-amazon-elastic-block-store-ebs)
-- [Amazon Elastic File System (EFS)](#📁-amazon-elastic-file-system-efs)
-- [Comparison Tables](#📊-comparison-tables)
-- [Exam Tips](#🎯-exam-tips-aws-saa)
-
----
+# 🗂️ AWS Storage Services: EBS & EFS 
 
 ## 💾 Amazon Elastic Block Store (EBS)
 
