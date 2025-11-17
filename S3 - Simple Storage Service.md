@@ -1,4 +1,4 @@
-# 🪣 Amazon S3 (Simple Storage Service)
+# Amazon S3 (Simple Storage Service)
 
 ## 1. Overview & Key Features
 
