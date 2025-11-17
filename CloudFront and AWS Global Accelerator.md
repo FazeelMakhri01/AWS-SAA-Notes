@@ -1,4 +1,4 @@
-# 🌍 Amazon CloudFront & AWS Global Accelerator
+# Amazon CloudFront & AWS Global Accelerator
 
 ## 🚀 Amazon CloudFront (CDN)
 
