@@ -1,4 +1,4 @@
-# 🌐 Amazon Route 53 (DNS Service)
+# Amazon Route 53 (DNS Service)
 
 ## 1. Overview
 
