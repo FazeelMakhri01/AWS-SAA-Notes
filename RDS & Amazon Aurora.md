@@ -1,4 +1,4 @@
-# 🗄️ AWS Database Services — RDS & Amazon Aurora
+# AWS Database Services — RDS & Amazon Aurora
 
 
 
