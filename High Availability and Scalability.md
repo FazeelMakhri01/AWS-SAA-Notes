@@ -1,6 +1,5 @@
-# ⚙️ High Availability and Scalability
+# High Availability and Scalability
 
----
 
 ## 📈 What is Scalability?
 
