@@ -1,4 +1,4 @@
-# 🗂️ AWS Storage Services: EBS & EFS 
+# AWS Storage Services: EBS & EFS 
 
 ## 💾 Amazon Elastic Block Store (EBS)
 
