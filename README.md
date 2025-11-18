@@ -25,10 +25,10 @@ Clone the repository locally:
 git clone https://github.com/<YOUR_USERNAME>/aws-saa-03-notes.git
 cd aws-saa-03-notes
 ```
-Navigate through sections by file or folder names.
-Each markdown file corresponds to a core AWS domain (e.g., VPC.md, Security.md, MachineLearning.md).
-Review exam tips highlighted in each section for quick revision.
-Alternatively, use the Notion link for an interactive and organized view of all notes.
+- Navigate through sections by file or folder names.
+- Each markdown file corresponds to a core AWS domain (e.g., VPC.md, Security.md, MachineLearning.md).
+- Review exam tips highlighted in each section for quick revision.
+- Alternatively, use the Notion link for an interactive and organized view of all notes.
 
 ---
 
@@ -57,20 +57,20 @@ Serverless.md
 
 ## ✅ Key Highlights
 
-Structured for Exam Success: Covers all major SAA-03 topics systematically.
-High-Yield Notes: Key points, workflows, and tips highlighted.
-Visual Aids: Diagrams included where applicable for easier understanding.
-Real-World Insights: Practical use cases for AWS services.
-Comprehensive Coverage: From foundational services to advanced topics like Machine Learning, Serverless, and Analytics.
+- Structured for Exam Success: Covers all major SAA-03 topics systematically.
+- High-Yield Notes: Key points, workflows, and tips highlighted.
+- Visual Aids: Diagrams included where applicable for easier understanding.
+- Real-World Insights: Practical use cases for AWS services.
+- Comprehensive Coverage: From foundational services to advanced topics like Machine Learning, Serverless, and Analytics.
 
 ---
 
 ## 🧩 Recommended Usage
 
-Study Mode: Sequentially read sections for full exam coverage.
-Revision Mode: Focus on key takeaways for last-minute exam prep.
-Hands-On Mode: Apply concepts directly in a personal AWS account.
-Notion Mode: Interactive study via Notion version
+- Study Mode: Sequentially read sections for full exam coverage.
+- Revision Mode: Focus on key takeaways for last-minute exam prep.
+- Hands-On Mode: Apply concepts directly in a personal AWS account.
+- Notion Mode: Interactive study via Notion version
 
 ---
 
