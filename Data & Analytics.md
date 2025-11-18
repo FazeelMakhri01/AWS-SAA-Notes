@@ -1,6 +1,5 @@
 # **Section 22: Data & Analytics**
 
----
 
 ## **1) Amazon Athena**
 
