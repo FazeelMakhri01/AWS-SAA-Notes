@@ -1,0 +1,158 @@
+# **Section 26: AWS Security and Encryption**
+
+## **1) Encryption 101**
+
+- 📌 **Types of Encryption**
+    1. **Encryption in-flight**
+        - Data encrypted before sending & decrypted after receiving
+        - Uses **TLS**
+        - Prevents MITM attacks
+        - Example: Client → (Encrypted Data via Certificate) → Server → (Decrypted)
+    2. **Server-Side Encryption**
+        - Data encrypted **after storing**, decrypted **before sending**
+        - Uses a **key**
+        - Example: Object → Server {(Key+Object) → Encrypted Data} → Send → Decrypted Object
+    3. **Client-Side Encryption**
+        - Data encrypted/decrypted by **client**
+        - Example: Client → Encrypt(Data+Key) → Server → Store → Send → Decrypt → Client
+
+---
+
+## **2) AWS KMS (Key Management Service)**
+
+- 📌 **Overview**
+    - Managed service for **key creation & management**
+    - Compatible with most AWS services
+- 🔑 **Key Types**
+    1. **Symmetric:** single key for encryption & decryption
+    2. **Asymmetric:** public key (encrypt) + private key (decrypt), used outside AWS
+- 💰 **Key Ownership**
+    - Amazon-owned → Free
+    - AWS-managed → Free (e.g., aws/s3)
+    - Customer-managed → $1/month
+- 📜 **Key Policies**
+    - Default: Root user has full access
+    - Custom: Define users/roles & admin permissions
+- 🔄 **Encrypted AMI Sharing**
+    - Share AMI launch permissions & KMS key
+    - Target account needs IAM role/user with KMS permissions: `DescribeKey`, `ReEncrypt`, `CreateGrant`, `Decrypt`
+    - Optional: Re-encrypt with target account key
+
+---
+
+## **3) AWS SSM Parameter Store & Secrets Manager**
+
+- **SSM Parameter Store**
+    - Stores **secrets & configurations**
+    - Supports **automation & rotation**
+- **Secrets Manager**
+    - Stores & rotates secrets automatically
+    - Integrated with **RDS, Aurora, etc.**
+    - Uses **KMS for encryption**
+    - Multi-region replication for disaster recovery
+- ✅ **Use Case**
+    - Centralized secret management with rotation and encryption
+
+---
+
+## **4) AWS Certificate Manager (ACM)**
+
+- 📌 **Purpose**
+    - Manage TLS certificates for **HTTPS / in-flight encryption**
+- 🔗 **Integrations**
+    - ALB, CloudFront, API Gateway (not directly EC2)
+- 🌟 **Features**
+    - Public & private certificates
+    - Automatic renewal for public certificates
+    - DNS or email validation (DNS preferred)
+    - EventBridge & Config integration for expiration alerts
+- 📝 **Notes**
+    - Edge-optimized API Gateway → ACM in **us-east-1**
+    - Regional API Gateway → ACM in same region as API
+
+---
+
+## **5) AWS WAF (Web Application Firewall)**
+
+- 📌 **Purpose**
+    - Protect web apps at **Layer 7 (HTTP)**
+- 🔗 **Deployment Targets**
+    - ALB, API Gateway, CloudFront, AppSync, Cognito
+- 🛡 **Web ACLs & Rules**
+    - Filter by IP, headers, body, URI, geo, rate-limit
+- ⚡ **Fixed IP Use Case**
+    - WAF + ALB + **Global Accelerator** → fixed IPs with WAF protection
+
+---
+
+## **6) AWS Shield**
+
+- 📌 **Purpose**
+    - Protect from **DDoS attacks**
+- 🆓 **Shield Standard**
+    - Free, layer 3 & 4 protection (SYN floods, UDP, reflection attacks)
+- 💳 **Shield Advanced**
+    - $3,000/month
+    - Advanced protection, 24/7 DDoS response, auto WAF rules for layer 7
+- ✅ **Use Case**
+    - Protect high-risk applications from DDoS
+
+---
+
+## **7) Firewall Manager**
+
+- 📌 **Purpose**
+    - Apply **WAF rules & security policies** across AWS accounts & resources
+
+---
+
+## **8) Amazon GuardDuty**
+
+- 📌 **Purpose**
+    - Intelligent threat detection using ML, anomaly detection, & 3rd party data
+- 🔗 **Data Sources**
+    - CloudTrail, VPC flow logs, DNS logs, EKS audit logs, RDS/Aurora login, S3/EBS/Lambda events
+- ⚡ **Integration**
+    - Findings → EventBridge → Lambda / SNS
+    - Detects crypto attacks
+- ✅ **Use Case**
+    - Continuous threat monitoring & automated response
+
+---
+
+## **9) Amazon Inspector**
+
+- 📌 **Purpose**
+    - Automated **security assessments**
+- 🔍 **Targets**
+    - EC2 instances (via SSM)
+    - Container images (ECR)
+    - Lambda functions
+- 📝 **Features**
+    - Continuous scanning, CVE database for vulnerabilities
+    - Findings → Security Hub / EventBridge
+- ✅ **Use Case**
+    - Continuous assessment & centralized reporting
+
+---
+
+## **10) Amazon Macie**
+
+- 📌 **Purpose**
+    - Data security & privacy
+    - Detect & protect **PII in S3**
+- 🔗 **Integration**
+    - EventBridge → SNS / Lambda
+- ✅ **Use Case**
+    - Automated PII discovery & compliance reporting
+
+---
+
+## **Key Takeaways**
+
+- **Encryption:** in-flight, server-side, client-side
+- **KMS:** key management, symmetric/asymmetric, AMI sharing
+- **SSM & Secrets Manager:** secret storage, rotation, multi-region replication
+- **ACM:** TLS management, ALB/API Gateway/CloudFront integration
+- **WAF & Shield:** HTTP firewall, DDoS protection
+- **GuardDuty, Inspector, Macie:** intelligent threat detection, vulnerability scanning, PII discovery
